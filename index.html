@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 Anime Prompts to Try in PixAI</title>
+<meta name="description" content="A free, searchable library of 100 anime art prompts you can copy straight into PixAI. Beach, festival, fireworks, fantasy, sci-fi, chibi, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#171325;
+    --twilight:#2b1e52;
+    --magenta:#ff5d8f;
+    --violet:#8b5cf6;
+    --canvas:#f7f4fb;
+    --card:#ffffff;
+    --muted:#6b6480;
+    --line:#e7e1f0;
+    --display:"Space Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --body:ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono:ui-monospace, "SFMono-Regular", "JetBrains Mono", "Cascadia Code", Menlo, Consolas, monospace;
+
+    /* category hues */
+    --por:#ff5d8f;
+    --beach:#22c3d6;
+    --festival:#f5a524;
+    --fireworks:#6366f1;
+    --fantasy:#10b981;
+    --scifi:#a855f7;
+    --school:#38bdf8;
+    --nature:#84cc16;
+    --group:#fb7185;
+    --chibi:#fb923c;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:var(--body);
+    color:var(--ink);
+    background:var(--canvas);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+
+  /* ---------- header ---------- */
+  header.hero{
+    position:relative;
+    background:
+      radial-gradient(1200px 500px at 15% -10%, rgba(255,93,143,.35), transparent 60%),
+      radial-gradient(1000px 500px at 90% 0%, rgba(139,92,246,.4), transparent 55%),
+      linear-gradient(160deg, var(--twilight), var(--ink));
+    color:#fff;
+    padding:64px 24px 40px;
+    overflow:hidden;
+  }
+  .hero-inner{max-width:1140px;margin:0 auto;position:relative;z-index:2}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:.72rem;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,.7);
+    margin:0 0 14px;
+  }
+  h1{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(2.3rem, 6vw, 4.2rem);
+    line-height:1.02;
+    letter-spacing:-.02em;
+    margin:0 0 16px;
+  }
+  h1 .pop{
+    background:linear-gradient(90deg, #ffd1e0, #fff);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .lede{
+    max-width:640px;
+    font-size:1.06rem;
+    color:rgba(255,255,255,.86);
+    margin:0 0 22px;
+  }
+  .lede a{color:#ffd6e4;text-decoration:underline;text-underline-offset:3px;font-weight:600}
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:10px 26px;align-items:center;
+    font-size:.86rem;color:rgba(255,255,255,.72);
+  }
+  .hero-meta .tag{font-family:var(--mono);font-size:.78rem}
+  .check{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:16px;height:16px;border-radius:50%;
+    background:#3ad29f;color:#04231a;font-size:.7rem;font-weight:800;margin-right:6px;
+  }
+
+  /* ---------- controls ---------- */
+  .controls{
+    position:sticky;top:0;z-index:20;
+    background:rgba(247,244,251,.92);
+    backdrop-filter:saturate(1.2) blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .controls-inner{max-width:1140px;margin:0 auto;padding:14px 24px}
+  .searchrow{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .search{
+    flex:1;min-width:220px;position:relative;
+  }
+  .search input{
+    width:100%;
+    font-family:var(--body);font-size:1rem;
+    padding:12px 14px 12px 42px;
+    border:1.5px solid var(--line);
+    border-radius:12px;
+    background:#fff;color:var(--ink);
+    outline:none;
+    transition:border-color .15s, box-shadow .15s;
+  }
+  .search input:focus{border-color:var(--violet);box-shadow:0 0 0 4px rgba(139,92,246,.16)}
+  .search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);opacity:.5}
+  .random{
+    font-family:var(--display);font-weight:600;font-size:.92rem;
+    border:1.5px solid var(--line);background:#fff;color:var(--ink);
+    padding:11px 16px;border-radius:12px;cursor:pointer;white-space:nowrap;
+    transition:transform .1s, border-color .15s, background .15s;
+  }
+  .random:hover{border-color:var(--magenta);background:#fff5f8}
+  .random:active{transform:scale(.97)}
+
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+  .chip{
+    font-family:var(--body);font-size:.85rem;font-weight:600;
+    border:1.5px solid var(--line);background:#fff;color:var(--muted);
+    padding:7px 13px;border-radius:999px;cursor:pointer;
+    display:inline-flex;align-items:center;gap:7px;
+    transition:all .14s;
+  }
+  .chip .dot{width:9px;height:9px;border-radius:50%;background:var(--c, #ccc)}
+  .chip:hover{color:var(--ink);border-color:#d7cfe6}
+  .chip[aria-pressed="true"]{
+    background:var(--ink);color:#fff;border-color:var(--ink);
+  }
+  .chip[aria-pressed="true"] .dot{box-shadow:0 0 0 2px rgba(255,255,255,.5)}
+  .countline{
+    max-width:1140px;margin:0 auto;padding:14px 24px 0;
+    font-family:var(--mono);font-size:.8rem;color:var(--muted);letter-spacing:.02em;
+  }
+
+  /* ---------- grid ---------- */
+  main{max-width:1140px;margin:0 auto;padding:16px 24px 72px}
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(320px, 1fr));
+    gap:18px;
+    align-items:start;
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    border-top:4px solid var(--c, var(--violet));
+    padding:18px 18px 16px;
+    display:flex;flex-direction:column;gap:12px;
+    box-shadow:0 1px 2px rgba(23,19,37,.04);
+    transition:transform .16s ease, box-shadow .16s ease;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(43,30,82,.12)}
+  .card-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .cat{
+    font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--c, var(--violet));font-weight:700;
+  }
+  .tested{
+    display:inline-flex;align-items:center;gap:5px;
+    font-family:var(--body);font-size:.68rem;font-weight:700;
+    color:#0c7a55;background:#e6f8f0;border:1px solid #bfead9;
+    padding:3px 8px;border-radius:999px;
+  }
+  .tested::before{content:"✓";font-weight:800}
+  .prompt{
+    font-family:var(--mono);
+    font-size:.86rem;line-height:1.6;
+    color:#2a2440;
+    background:#faf8fe;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:12px 13px;
+    white-space:pre-wrap;word-break:break-word;
+    margin:0;
+  }
+  .card-actions{display:flex;justify-content:flex-end}
+  .copy{
+    font-family:var(--display);font-weight:600;font-size:.85rem;
+    border:1.5px solid var(--line);background:#fff;color:var(--ink);
+    padding:8px 14px;border-radius:10px;cursor:pointer;
+    display:inline-flex;align-items:center;gap:7px;
+    transition:all .14s;
+  }
+  .copy:hover{border-color:var(--violet);background:#f6f2ff}
+  .copy:active{transform:scale(.97)}
+  .copy.done{background:#e6f8f0;border-color:#bfead9;color:#0c7a55}
+
+  .flash{outline:3px solid var(--magenta);outline-offset:3px}
+
+  .empty{
+    text-align:center;color:var(--muted);
+    padding:60px 20px;font-size:1rem;
+  }
+
+  /* ---------- footer CTA ---------- */
+  footer{
+    background:linear-gradient(160deg, var(--ink), var(--twilight));
+    color:#fff;padding:56px 24px 40px;text-align:center;
+  }
+  footer h2{font-family:var(--display);font-size:clamp(1.6rem,4vw,2.4rem);margin:0 0 12px;letter-spacing:-.01em}
+  footer p{color:rgba(255,255,255,.8);max-width:520px;margin:0 auto 24px}
+  .cta{
+    display:inline-block;
+    font-family:var(--display);font-weight:700;font-size:1.02rem;
+    background:linear-gradient(90deg, var(--magenta), var(--violet));
+    color:#fff;text-decoration:none;
+    padding:15px 30px;border-radius:14px;
+    box-shadow:0 10px 30px rgba(255,93,143,.35);
+    transition:transform .12s, box-shadow .12s;
+  }
+  .cta:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(139,92,246,.4)}
+  .footnote{margin-top:26px;font-size:.78rem;color:rgba(255,255,255,.55);font-family:var(--mono)}
+  .footnote a{color:rgba(255,255,255,.75)}
+
+  /* load-in */
+  .card{opacity:0;transform:translateY(10px)}
+  .card.in{opacity:1;transform:none}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .card{opacity:1;transform:none;transition:none}
+    .card:hover{transform:none}
+    .cta:hover,.copy:active,.random:active{transform:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Free anime prompt library</p>
+    <h1>100 Anime Prompts<br><span class="pop">to try in PixAI</span></h1>
+    <p class="lede">A searchable, copy-and-go pack of anime art ideas across ten themes. Grab one, swap in your own OC, and generate it in <a href="https://eap.pixai.art/go/naveed" target="_blank" rel="noopener">PixAI</a>.</p>
+    <div class="hero-meta">
+      <span class="tag">10 categories</span>
+      <span class="tag">100 prompts</span>
+      <span><span class="check">✓</span>marks prompts generated firsthand on Tsubaki.2</span>
+    </div>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="controls-inner">
+    <div class="searchrow">
+      <div class="search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input id="search" type="search" placeholder="Search prompts, e.g. yukata, fireworks, mecha, chibi…" aria-label="Search prompts">
+      </div>
+      <button class="random" id="random" type="button">Surprise me</button>
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="Filter by category"></div>
+  </div>
+</div>
+
+<p class="countline" id="count"></p>
+
+<main>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" hidden>No prompts match that search. Try a different word, or clear the filter.</div>
+</main>
+
+<footer>
+  <h2>Ready to make these?</h2>
+  <p>Pick a prompt, drop it into the generator, choose an anime model, and go. Your daily free credits are enough to test a whole batch.</p>
+  <a class="cta" href="https://eap.pixai.art/go/naveed" target="_blank" rel="noopener">Open PixAI and start creating</a>
+  <p class="footnote">These are prompt ideas to try, not guaranteed results. Made for use in <a href="https://eap.pixai.art/go/naveed" target="_blank" rel="noopener">PixAI</a>.</p>
+</footer>
+
+<script>
+const CATEGORIES = [
+  {id:"por",      name:"Portraits",           varname:"--por"},
+  {id:"beach",    name:"Summer & Beach",      varname:"--beach"},
+  {id:"festival", name:"Festival & Yukata",   varname:"--festival"},
+  {id:"fireworks",name:"Fireworks & Night",   varname:"--fireworks"},
+  {id:"fantasy",  name:"Fantasy & Adventure", varname:"--fantasy"},
+  {id:"scifi",    name:"Sci-Fi & Cyberpunk",  varname:"--scifi"},
+  {id:"school",   name:"School & Slice of Life",varname:"--school"},
+  {id:"nature",   name:"Nature & Scenery",    varname:"--nature"},
+  {id:"group",    name:"Couples, Groups & VTuber",varname:"--group"},
+  {id:"chibi",    name:"Chibi, Comics & Fun", varname:"--chibi"}
+];
+
+const PROMPTS = [
+  // Portraits
+  {c:"por", t:"A close-up portrait of a quiet girl with long charcoal hair and pale green eyes, a single white flower tucked behind her ear, soft window light, muted background, gentle expression, detailed anime illustration"},
+  {c:"por", t:"1boy, short crimson hair, sharp golden eyes, a black high-collar coat, a faint scar over one eyebrow, confident half-smile, dramatic side lighting, dark background, anime style"},
+  {c:"por", t:"A dreamy girl with pastel-blue twin tails and star-shaped pupils, holding a glowing bubble, soft pink gradient background, sparkles in the air, cute and whimsical, anime coloring"},
+  {c:"por", t:"Portrait of an elegant older woman with silver hair in an updo, deep violet eyes, a fitted dark blouse, calm and composed, warm Rembrandt lighting, refined mood, detailed anime"},
+  {c:"por", t:"1girl, freckles, messy ginger bob, oversized knit sweater, holding a steaming mug with both hands, cozy warm lighting, soft focus background, content expression, anime illustration"},
+  {c:"por", t:"A stoic knight girl with a short ash-blonde undercut and a thin facial scar, silver armor over one shoulder, steady gaze, cool overcast light, muted palette, detailed anime portrait"},
+  {c:"por", t:"Close-up of a cheerful boy with dark skin, tight black curls, and bright hazel eyes, round glasses and a mustard cardigan, warm natural light, friendly grin, anime style"},
+  {c:"por", t:"A mysterious girl with waist-length white hair and heterochromia, one red and one blue eye, a delicate silver circlet, neutral expression, dark teal background, soft rim light, detailed anime"},
+  {c:"por", t:"1girl, lavender pixie cut, dangling star earrings, denim jacket over a band tee, blowing a bubblegum bubble, playful smirk, flat pastel background, trendy anime coloring"},
+  {c:"por", t:"Portrait of a gentle monk boy with a shaved head and warm brown eyes, simple beige robes, a faint smile, soft temple light, incense haze, serene mood, detailed anime style"},
+
+  // Summer & Beach
+  {c:"beach", v:true, t:"A cheerful girl with chin-length seafoam-green hair and light freckles, wearing a wide-brim straw hat and a white sundress over a simple one-piece swimsuit, crouching to pick up a seashell on pale golden sand, clear turquoise water behind her, bright midday sun, a soft breeze, anime illustration, best quality"},
+  {c:"beach", t:"Warm orange and pink sunset over a calm ocean, a boy with tousled sandy-blond hair in a loose linen shirt and rolled-up trousers standing barefoot at the water's edge, hands in his pockets, looking out to sea, long shadows, gentle waves, cinematic anime style"},
+  {c:"beach", t:"1girl, long coral-pink hair in a side braid, sun hat, a sarong wrapped over a swimsuit, holding a melting ice cream cone, walking along a palm-lined wooden boardwalk, bright tropical afternoon, dappled shade, anime coloring"},
+  {c:"beach", t:"Two friends sharing a beach picnic on a red checkered blanket under a striped parasol, slices of watermelon and cold drinks between them, one laughing, gentle waves behind them, warm afternoon light, relaxed summer mood, anime illustration"},
+  {c:"beach", t:"Full body, an original character with teal hair in twin buns wearing a bright athletic rash guard and board shorts, carrying a surfboard under one arm, confident stance on wet sand, clean seaside background, even lighting, detailed anime style"},
+  {c:"beach", t:"A girl floating on a clear inflatable ring in a sparkling pool, sun hat over her face, one hand trailing in the water, bright blue water, warm summer light, relaxed top-down composition, anime illustration"},
+  {c:"beach", t:"A seaside food stall at noon, a boy in an apron handing over shaved ice in a paper cup, cold mist rising, colorful syrup bottles, a bright striped awning, cheerful summer scene, detailed anime background"},
+  {c:"beach", t:"1girl, wet hair, laughing, splashing seawater toward the viewer, droplets caught in the light, bright sun flare, dynamic motion, joyful energy, vivid anime coloring"},
+  {c:"beach", t:"A quiet tide pool at golden hour, a child crouched to look at tiny crabs, a bucket and net beside them, warm low sun, long shadows on wet rock, nostalgic summer mood, soft anime illustration"},
+  {c:"beach", t:"A lifeguard tower on an empty beach at dawn, soft pink sky, calm sea, a lone figure stretching on the sand, cool morning light, wide peaceful composition, atmospheric anime scene"},
+
+  // Festival & Yukata
+  {c:"festival", v:true, t:"A calm girl in a navy-blue yukata patterned with white morning glories and a red obi, her hair in a low bun with a small floral hair ornament, holding a folded paper fan, standing on a festival street lined with glowing paper lanterns at dusk, soft warm light, anime illustration"},
+  {c:"festival", t:"A lively summer festival street at night, rows of red paper lanterns overhead, food stalls selling takoyaki and shaved ice, warm glowing signs, a light crowd in yukata, wooden stalls, festive atmosphere, wide shot, detailed anime background"},
+  {c:"festival", t:"A boy in a light gray yukata crouched at a goldfish-scooping stall, holding a paper scoop over a glowing tank of orange goldfish, focused with a small smile, lanterns reflecting on the water, warm night light, anime style"},
+  {c:"festival", t:"1girl, mint-green yukata with a yellow obi, a fox festival mask pushed up on her forehead, holding a bright red candy apple, cheerful expression, festival stalls blurred behind her, evening, soft bokeh lights, anime coloring"},
+  {c:"festival", v:true, t:"Three friends in colorful yukata walking together down a festival path, each holding a summer snack, laughing mid-conversation, paper lanterns strung overhead, warm night glow, lively group composition, anime illustration"},
+  {c:"festival", t:"An old shrine at festival time, stone steps lined with lit stone lanterns, a girl in a white and red miko outfit sweeping leaves, warm dusk light, a quiet sacred mood, detailed anime scene"},
+  {c:"festival", t:"A close-up of hands holding a sparkler at night, tiny bright sparks scattering, a yukata sleeve just in frame, dark bokeh background, warm glow on the skin, an intimate summer moment, anime illustration"},
+  {c:"festival", t:"A taiko drummer boy mid-strike at a night festival, headband and happi coat, muscles tensed, lanterns and crowd behind him, dynamic motion, warm stage light, energetic anime style"},
+  {c:"festival", t:"1girl, purple yukata, carrying a paper lantern on a stick down a dark path lined with fireflies, soft green glow, quiet night, gentle wonder, atmospheric anime illustration"},
+  {c:"festival", t:"A festival hillside view at night, couples and friends scattered on the grass, food stalls glowing below, drifting lanterns overhead, wide establishing shot, warm summer mood, detailed anime background"},
+
+  // Fireworks & Night
+  {c:"fireworks", v:true, t:"Two girls in soft lavender yukata sitting on a riverbank railing with their backs to the viewer, looking up as fireworks light the sky, warm bokeh and reflections on the water, a gentle night breeze in their hair, quiet wonder, anime illustration"},
+  {c:"fireworks", t:"Huge colorful fireworks blooming over a summer festival at night, a crowd of small silhouettes watching from a hillside, a river below reflecting the bursts of light, deep blue sky, warm festival glow at the base, wide cinematic anime scene"},
+  {c:"fireworks", t:"Close-up portrait of a character's face turned upward, eyes wide with wonder, colorful fireworks bokeh filling the dark background, soft multicolored light on their skin, a gentle smile, shallow depth of field, anime style"},
+  {c:"fireworks", t:"A group of four friends lying side by side on a picnic blanket in a grassy field at night, looking up at a sky full of stars and distant fireworks, relaxed and happy, soft rim light, calm summer night, anime illustration"},
+  {c:"fireworks", t:"Two people sitting close on a wooden bench overlooking a bay, one gently resting their head on the other's shoulder, distant fireworks over the water, warm lantern light beside them, a tender peaceful evening, anime style"},
+  {c:"fireworks", t:"A city rooftop at night, a lone girl leaning on the railing with a soda can, neon signs glowing far below, a single distant firework, cool blue night with warm city accents, moody anime illustration"},
+  {c:"fireworks", t:"A quiet harbor at night, boats with string lights reflected on still black water, a couple walking along the pier, warm lanterns, calm and romantic, detailed anime scene"},
+  {c:"fireworks", t:"1girl, standing on a train platform late at night, a warm vending machine glow beside her, empty tracks, soft rain starting, reflective puddles, a lonely late-night mood, atmospheric anime style"},
+  {c:"fireworks", t:"A summer night thunderstorm seen from a window, a girl watching lightning over distant rooftops, warm room light behind her, rain streaking the glass, cozy and dramatic, anime illustration"},
+  {c:"fireworks", t:"A field of fireflies at night, a child reaching out with cupped hands, hundreds of soft green lights, deep blue darkness, magical quiet wonder, glowing anime scene"},
+
+  // Fantasy & Adventure
+  {c:"fantasy", t:"A young mage in a deep-blue cloak casting a spell, glowing runes swirling around her raised hand, wind lifting her hair, an ancient stone hall behind her, dramatic magical light, detailed anime illustration"},
+  {c:"fantasy", t:"1boy, a silver-haired swordsman on a mountain ridge at dawn, a worn traveler's cloak, a greatsword on his back, mist rolling below, first light on the peaks, epic adventurous mood, anime style"},
+  {c:"fantasy", t:"A tiny fairy with translucent wings resting on a mushroom in a glowing forest, dewdrops, soft bioluminescent plants, dappled moonlight, whimsical and delicate, detailed anime scene"},
+  {c:"fantasy", t:"A dragon-rider girl on the back of a small green dragon soaring over green valleys, wind in her braid, leather flight gear, bright clouds, a sweeping sense of freedom, dynamic anime illustration"},
+  {c:"fantasy", t:"An ancient library with floating candles and endless shelves, a curious scholar boy climbing a tall ladder for a glowing book, warm amber light, dust motes, a magical academic mood, detailed anime background"},
+  {c:"fantasy", t:"A desert wanderer in layered sand-colored robes standing before half-buried ruins, twin suns low on the horizon, a floating map of light in her hand, warm dust haze, adventurous anime scene"},
+  {c:"fantasy", t:"1girl, a dark-elf ranger with white braided hair and green eyes, a camo cloak, drawing a glowing bow in a moonlit forest, tense focus, cool rim light, detailed fantasy anime style"},
+  {c:"fantasy", t:"A cheerful potion-shop girl surrounded by bubbling colorful bottles, a cauldron glowing green, herbs hanging from the ceiling, cozy magical clutter, warm lantern light, detailed anime illustration"},
+  {c:"fantasy", t:"A knight and a small dragon sharing a campfire at night in a forest clearing, the knight's armor set aside, gentle firelight, quiet companionship, a starry sky, warm anime scene"},
+  {c:"fantasy", t:"A floating sky island with waterfalls spilling into the clouds, a lone airship approaching, bright blue sky, a tiny figure at the ship's bow, grand adventurous scale, detailed anime landscape"},
+
+  // Sci-Fi & Cyberpunk
+  {c:"scifi", t:"A cyberpunk street at night in the rain, neon signs in pink and cyan reflected on wet pavement, a girl in a translucent raincoat with glowing hair tips, holding an umbrella, moody atmosphere, detailed anime illustration"},
+  {c:"scifi", t:"1boy, a lone pilot in a sleek white flight suit standing before a massive mecha in a hangar, cool industrial light, cables and gantries, a quiet before-battle mood, detailed sci-fi anime style"},
+  {c:"scifi", t:"An android girl with visible seams and soft glowing blue eyes sitting by a window in a clean minimalist room, gentle morning light, a single potted plant, calm and slightly melancholy, anime illustration"},
+  {c:"scifi", t:"A bustling space-station market, aliens and humans at glowing stalls, holographic signs, a curious traveler girl with a floating drone companion, warm interior light, dense detail, anime background"},
+  {c:"scifi", t:"1girl, a hacker in a dark room lit only by floating holographic screens, code reflected on her glasses, focused expression, teal and magenta glow, cyberpunk mood, detailed anime style"},
+  {c:"scifi", t:"A retro-futuristic diner on a neon highway at night, chrome and pastel colors, a waitress on roller skates carrying a tray, warm interior against the dark road, nostalgic sci-fi anime scene"},
+  {c:"scifi", t:"A giant mecha kneeling in a flooded ruined city at sunset, a small pilot standing on its hand, calm after the battle, warm orange light on wet metal, an epic quiet mood, detailed anime illustration"},
+  {c:"scifi", t:"1boy, a cybernetic street racer leaning on a glowing motorcycle, city skyline behind him, a jacket with light strips, confident pose, cool night with neon accents, dynamic anime style"},
+  {c:"scifi", t:"An astronaut girl floating inside a bright space capsule, Earth visible through the window, tethered tools drifting, a soft blue planet glow on her helmet, serene wonder, detailed anime scene"},
+  {c:"scifi", t:"A dense vertical cyberpunk city seen from a balcony, flying cars between towers, endless neon, a small figure watching from above, rain haze, vast futuristic scale, detailed anime background"},
+
+  // School & Slice of Life
+  {c:"school", t:"1girl, sitting by a classroom window in afternoon light, chin on hand, watching cherry blossoms fall outside, empty desks, warm nostalgic glow, gentle slice-of-life anime illustration"},
+  {c:"school", t:"Two students walking home along a river path after school, bags on their shoulders, chatting, golden hour light, long shadows, cherry trees, a calm everyday mood, detailed anime scene"},
+  {c:"school", t:"A cluttered art-club room, a boy with paint on his cheek focused on a canvas, sunlight through tall windows, brushes and jars everywhere, a cozy creative mood, detailed anime illustration"},
+  {c:"school", t:"1girl, running late with toast in her mouth, school bag flying, a morning street, sakura petals, dynamic motion, classic comedic slice-of-life anime style"},
+  {c:"school", t:"A quiet library corner, a studious girl asleep on an open book, glasses slipping, soft afternoon light, floating dust, a tender peaceful mood, detailed anime scene"},
+  {c:"school", t:"A rooftop lunch scene, three friends eating bento boxes, blue sky and a distant city, wind in their hair, relaxed laughter, a bright cheerful slice-of-life anime illustration"},
+  {c:"school", t:"A rainy day at a bus stop, two classmates sharing one umbrella, wet street reflections, a warm quiet moment, soft grey light, gentle anime scene"},
+  {c:"school", t:"1boy, cleaning the classroom alone after school, chairs stacked on desks, an orange sunset flooding the room, broom in hand, a calm reflective mood, detailed anime illustration"},
+  {c:"school", t:"A convenience store at night, a tired student buying a snack, cool fluorescent light, glowing shelves, a quiet late-night calm, detailed everyday anime scene"},
+  {c:"school", t:"A school festival stall, a girl in a cafe apron waving people over, colorful banners, a busy cheerful crowd, warm daytime light, lively slice-of-life anime illustration"},
+
+  // Nature & Scenery
+  {c:"nature", t:"A vast lavender field under a bright blue sky, gentle hills, a single tree on the horizon, drifting clouds, a warm summer breeze, peaceful wide landscape, detailed anime scenery, no characters"},
+  {c:"nature", t:"A misty bamboo forest at dawn, soft green light filtering through tall stalks, a narrow stone path, quiet and serene, atmospheric anime landscape"},
+  {c:"nature", t:"A mountain lake at sunrise, perfectly still water mirroring pink peaks, a small wooden dock, cool morning mist, tranquil, detailed anime scenery"},
+  {c:"nature", t:"An autumn shrine path covered in red maple leaves, stone lanterns, soft afternoon light, gently falling leaves, a nostalgic calm, detailed anime background"},
+  {c:"nature", t:"A snowy village at night, warm lights in every window, softly falling snow, smoke from chimneys, a deep blue winter quiet, cozy anime landscape"},
+  {c:"nature", t:"A cliff overlooking a turquoise sea, wildflowers in the foreground, a lighthouse in the distance, a bright windy day, fresh open air, detailed anime scenery"},
+  {c:"nature", t:"A hidden waterfall in a jungle, sunbeams breaking through the canopy, glowing mist, lush ferns, vivid greens, a magical natural mood, detailed anime background"},
+  {c:"nature", t:"A quiet rice terrace at golden hour, water reflecting the orange sky, distant mountains, a lone farmhouse, a warm peaceful rural scene, detailed anime landscape"},
+  {c:"nature", t:"A starry desert night, endless dunes under the Milky Way, a single tent with a warm glow, a vast silent sky, awe and solitude, detailed anime scenery"},
+  {c:"nature", t:"A spring meadow after rain, fresh green grass, a rainbow arching over distant hills, soft wet light, sparkling droplets, a hopeful bright mood, detailed anime landscape"},
+
+  // Couples, Groups & VTuber
+  {c:"group", t:"A cute couple sharing a single bowl of colorful shaved ice with two spoons at a small cafe, leaning close and smiling, condensation on the glass, a bright airy interior, warm afternoon light, wholesome anime style"},
+  {c:"group", t:"Four friends riding bikes along a coastal road on a summer morning, wind in their hair, ocean and blue sky beside them, a sense of motion, cheerful energy, wide shot, bright clean anime illustration"},
+  {c:"group", v:true, t:"A character with big expressive eyes and an excited open-mouth smile leaning toward the camera and pointing at the viewer, a bright summer background with a beach and blue sky, bold saturated colors, strong rim light, generous empty space on the right for a title, anime thumbnail style"},
+  {c:"group", t:"A quiet couple under one umbrella in the rain, foreheads almost touching, city lights blurred behind them, warm and cool color contrast, a tender romantic mood, detailed anime illustration"},
+  {c:"group", t:"A band of five friends posing on a rooftop at sunset with instruments, denim and leather, confident group energy, warm backlight, a dynamic promotional composition, anime style"},
+  {c:"group", t:"A VTuber-style character with cat ears and a headset waving hello, a cozy streaming room behind her with soft LED lights, a bright expressive face, empty space on the left for text, anime thumbnail style"},
+  {c:"group", t:"Two rival characters back to back, one in white and one in black, sparks between them, dramatic split lighting, a bold poster composition, high energy, detailed anime illustration"},
+  {c:"group", t:"A wide banner composition, a small character standing on a grassy hill under a vast sky with drifting clouds, lots of open space for a name or logo, soft warm palette, peaceful, anime landscape banner"},
+  {c:"group", t:"A family of three walking through a park in autumn, parents and a small child kicking leaves, warm golden light, tender everyday warmth, detailed anime scene"},
+  {c:"group", t:"A striking single character centered in frame, a flowing dress caught in the wind, petals swirling, golden hour backlight, clean margins for text overlay, a vibrant polished anime hero composition"},
+
+  // Chibi, Comics & Fun
+  {c:"chibi", v:true, t:"4-panel anime comic. Girl with short black hair, blue eyes, yellow hoodie. 1) Walking with ice cream. 2) Bumps into a dog, drops ice cream. 3) Dog catches it, girl cries comically. 4) Dog gives her a flower, both smile. Consistent character, manga panels, empty speech bubbles"},
+  {c:"chibi", t:"A chibi brave knight tripping over his own oversized sword, a tiny angry expression, sparkles and motion lines, a simple pastel background, cute comedic anime sticker style"},
+  {c:"chibi", t:"A round chibi cat-girl hugging a giant onigiri almost as big as her, sparkling happy eyes, a soft cream background, adorable mascot style, clean anime illustration"},
+  {c:"chibi", t:"A 2-panel gag comic: top panel a cool character posing confidently, bottom panel the same character sneezing and ruining it, exaggerated expressions, empty speech bubbles, manga style"},
+  {c:"chibi", t:"A chibi wizard brewing a potion that explodes in his face, a soot-covered surprised expression, a tiny hat askew, cartoon smoke, a funny simple anime scene"},
+  {c:"chibi", t:"A sticker sheet of one chibi character in six emotions: happy, angry, crying, sleepy, surprised, and loving, clean white background, bold outlines, a cute anime sticker set"},
+  {c:"chibi", t:"A chibi couple sharing a heart-shaped cookie, tiny blush marks, floating hearts, a soft pink background, wholesome adorable anime style"},
+  {c:"chibi", t:"A chibi office worker collapsed on a tiny desk under a mountain of paperwork, a comic sweat drop, an exhausted expression, funny relatable anime sticker style"},
+  {c:"chibi", t:"A chibi adventurer riding a fat lazy slime like a mount, both with sleepy eyes, a simple grassy background, a charming comedic anime illustration"},
+  {c:"chibi", t:"A comic-strip title card: one energetic chibi character bursting through paper, bold action lines, bright colors, empty banner space for a title, playful manga cover style"}
+];
+
+const catMap = Object.fromEntries(CATEGORIES.map(c => [c.id, c]));
+let activeCat = "all";
+let query = "";
+
+const grid = document.getElementById("grid");
+const chipsEl = document.getElementById("chips");
+const countEl = document.getElementById("count");
+const emptyEl = document.getElementById("empty");
+const searchEl = document.getElementById("search");
+
+// build chips
+function makeChip(id, name, varname){
+  const b = document.createElement("button");
+  b.className = "chip";
+  b.type = "button";
+  b.setAttribute("aria-pressed", id === "all" ? "true" : "false");
+  b.dataset.cat = id;
+  const dot = document.createElement("span");
+  dot.className = "dot";
+  if(varname) dot.style.setProperty("--c", `var(${varname})`);
+  else dot.style.setProperty("--c", "linear-gradient(90deg,#ff5d8f,#8b5cf6)"), dot.style.background = "linear-gradient(90deg,#ff5d8f,#8b5cf6)";
+  b.appendChild(dot);
+  b.appendChild(document.createTextNode(name));
+  b.addEventListener("click", () => {
+    activeCat = id;
+    [...chipsEl.children].forEach(c => c.setAttribute("aria-pressed", c.dataset.cat === id ? "true" : "false"));
+    render();
+  });
+  return b;
+}
+chipsEl.appendChild(makeChip("all", "All"));
+CATEGORIES.forEach(c => chipsEl.appendChild(makeChip(c.id, c.name, c.varname)));
+
+function cardFor(p, idx){
+  const cat = catMap[p.c];
+  const card = document.createElement("article");
+  card.className = "card";
+  card.style.setProperty("--c", `var(${cat.varname})`);
+
+  const top = document.createElement("div");
+  top.className = "card-top";
+  const catLabel = document.createElement("span");
+  catLabel.className = "cat";
+  catLabel.textContent = cat.name;
+  top.appendChild(catLabel);
+  if(p.v){
+    const badge = document.createElement("span");
+    badge.className = "tested";
+    badge.textContent = "tested";
+    badge.title = "Generated firsthand on Tsubaki.2";
+    top.appendChild(badge);
+  }
+  card.appendChild(top);
+
+  const pre = document.createElement("p");
+  pre.className = "prompt";
+  pre.textContent = p.t;
+  card.appendChild(pre);
+
+  const actions = document.createElement("div");
+  actions.className = "card-actions";
+  const btn = document.createElement("button");
+  btn.className = "copy";
+  btn.type = "button";
+  btn.innerHTML = copyIcon() + "<span>Copy</span>";
+  btn.addEventListener("click", () => doCopy(p.t, btn));
+  actions.appendChild(btn);
+  card.appendChild(actions);
+
+  return card;
+}
+
+function copyIcon(){
+  return '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15V5a2 2 0 0 1 2-2h10"></path></svg>';
+}
+
+function doCopy(text, btn){
+  const done = () => {
+    btn.classList.add("done");
+    btn.innerHTML = '<span>Copied</span>';
+    setTimeout(() => {
+      btn.classList.remove("done");
+      btn.innerHTML = copyIcon() + "<span>Copy</span>";
+    }, 1400);
+  };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done));
+  } else {
+    fallbackCopy(text, done);
+  }
+}
+function fallbackCopy(text, done){
+  const ta = document.createElement("textarea");
+  ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try{ document.execCommand("copy"); done(); }catch(e){}
+  document.body.removeChild(ta);
+}
+
+function currentList(){
+  return PROMPTS.filter(p => {
+    const catOk = activeCat === "all" || p.c === activeCat;
+    const qOk = !query || (p.t.toLowerCase().includes(query) || catMap[p.c].name.toLowerCase().includes(query));
+    return catOk && qOk;
+  });
+}
+
+function render(){
+  const list = currentList();
+  grid.innerHTML = "";
+  emptyEl.hidden = list.length !== 0;
+
+  const total = PROMPTS.length;
+  const catName = activeCat === "all" ? "all categories" : catMap[activeCat].name;
+  countEl.textContent = query
+    ? `Showing ${list.length} of ${total} prompts for "${query}"`
+    : `Showing ${list.length} prompts in ${catName}`;
+
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  list.forEach((p, i) => {
+    const card = cardFor(p, i);
+    grid.appendChild(card);
+    if(reduce){ card.classList.add("in"); }
+    else { requestAnimationFrame(() => setTimeout(() => card.classList.add("in"), Math.min(i, 12) * 22)); }
+  });
+}
+
+searchEl.addEventListener("input", e => {
+  query = e.target.value.trim().toLowerCase();
+  render();
+});
+
+document.getElementById("random").addEventListener("click", () => {
+  const cards = [...grid.children].filter(c => c.classList.contains("card"));
+  if(!cards.length) return;
+  const pick = cards[Math.floor(Math.random() * cards.length)];
+  pick.scrollIntoView({behavior: "smooth", block: "center"});
+  pick.classList.add("flash");
+  setTimeout(() => pick.classList.remove("flash"), 1200);
+});
+
+render();
+</script>
+</body>
+</html>

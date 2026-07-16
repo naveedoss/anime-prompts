@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>100 Anime Prompts to Try in PixAI</title>
-<meta name="description" content="A free, searchable library of 100 anime art prompts you can copy straight into PixAI. Beach, festival, fireworks, fantasy, sci-fi, chibi, and more.">
+<title>1,000+ Anime Prompt Ideas for PixAI — Free Library & Builder</title>
+<meta name="description" content="A free anime prompt library and mix-and-match builder for PixAI. 100 hand-written prompts plus a builder that creates millions of new combinations. Beach, festival, fireworks, fantasy, sci-fi, chibi, and more.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -55,10 +55,10 @@
       radial-gradient(1000px 500px at 90% 0%, rgba(139,92,246,.4), transparent 55%),
       linear-gradient(160deg, var(--twilight), var(--ink));
     color:#fff;
-    padding:64px 24px 40px;
+    padding:clamp(44px, 7vw, 96px) clamp(20px, 5vw, 40px) clamp(32px, 4vw, 52px);
     overflow:hidden;
   }
-  .hero-inner{max-width:1140px;margin:0 auto;position:relative;z-index:2}
+  .hero-inner{max-width:1140px;margin:0 auto;position:relative;z-index:2;width:100%}
   .eyebrow{
     font-family:var(--mono);
     font-size:.72rem;
@@ -230,33 +230,131 @@
   .footnote{margin-top:26px;font-size:.78rem;color:rgba(255,255,255,.55);font-family:var(--mono)}
   .footnote a{color:rgba(255,255,255,.75)}
 
-  /* load-in */
-  .card{opacity:0;transform:translateY(10px)}
-  .card.in{opacity:1;transform:none}
-
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto}
-    .card{opacity:1;transform:none;transition:none}
-    .card:hover{transform:none}
-    .cta:hover,.copy:active,.random:active{transform:none}
+  /* ---------- tabs ---------- */
+  .tabbar{
+    max-width:1140px;margin:0 auto;padding:18px 24px 0;
+    display:flex;gap:10px;flex-wrap:wrap;
   }
+  .tab{
+    font-family:var(--display);font-weight:600;font-size:.95rem;
+    border:1.5px solid var(--line);background:#fff;color:var(--muted);
+    padding:11px 20px;border-radius:12px 12px 0 0;cursor:pointer;
+    border-bottom:none;transition:all .14s;
+  }
+  .tab[aria-selected="true"]{
+    background:var(--ink);color:#fff;border-color:var(--ink);
+  }
+  .tab:hover:not([aria-selected="true"]){color:var(--ink);border-color:#d7cfe6}
+
+  /* ---------- builder ---------- */
+  .builder{
+    max-width:1140px;margin:0 auto;padding:22px 24px 56px;
+  }
+  .builder-panel{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    border-top:4px solid var(--magenta);
+    padding:22px;box-shadow:0 1px 2px rgba(23,19,37,.04);
+  }
+  .builder-intro{margin:0 0 18px;color:var(--muted);font-size:.95rem;max-width:640px}
+  .builder-grid{
+    display:grid;grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+    gap:14px;margin-bottom:18px;
+  }
+  .field label{
+    display:block;font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--muted);margin:0 0 6px;font-weight:700;
+  }
+  .field select{
+    width:100%;font-family:var(--body);font-size:.92rem;color:var(--ink);
+    padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;
+    background:#faf8fe;outline:none;cursor:pointer;
+    transition:border-color .15s, box-shadow .15s;
+  }
+  .field select:focus{border-color:var(--violet);box-shadow:0 0 0 4px rgba(139,92,246,.16)}
+  .builder-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+  .btn{
+    font-family:var(--display);font-weight:600;font-size:.92rem;
+    padding:11px 18px;border-radius:12px;cursor:pointer;
+    border:1.5px solid var(--line);background:#fff;color:var(--ink);
+    transition:transform .1s, border-color .15s, background .15s;
+  }
+  .btn:active{transform:scale(.97)}
+  .btn.primary{
+    background:linear-gradient(90deg, var(--magenta), var(--violet));
+    color:#fff;border-color:transparent;
+  }
+  .btn.primary:hover{box-shadow:0 8px 22px rgba(139,92,246,.3)}
+  .btn:hover:not(.primary){border-color:var(--magenta);background:#fff5f8}
+  .builder-out{
+    font-family:var(--mono);font-size:.9rem;line-height:1.65;color:#2a2440;
+    background:#faf8fe;border:1px solid var(--line);border-radius:12px;
+    padding:16px;white-space:pre-wrap;word-break:break-word;min-height:76px;
+  }
+  .builder-foot{
+    margin:14px 0 0;font-family:var(--mono);font-size:.76rem;color:var(--muted);
+  }
+
+  /* load-in: cards are visible by default; reveal only adds a brief entrance */
+  @keyframes pop{ from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:none} }
+  .card.reveal{ animation:pop .34s ease both; animation-delay:var(--d, 0s) }
+
+  @media (max-width: 560px){
+    h1{font-size:clamp(2rem, 9vw, 2.6rem)}
+    .lede{font-size:1rem}
+    .hero-meta{gap:8px 16px;font-size:.8rem}
+    .grid{grid-template-columns:1fr;gap:14px}
+    .searchrow{gap:8px}
+    .random{padding:11px 13px}
+  }
+
+  @media (min-width: 1280px){
+    .hero-inner, .controls-inner, .countline, main{max-width:1200px}
+  }
+
 </style>
 </head>
 <body>
 
 <header class="hero">
   <div class="hero-inner">
-    <p class="eyebrow">Free anime prompt library</p>
-    <h1>100 Anime Prompts<br><span class="pop">to try in PixAI</span></h1>
-    <p class="lede">A searchable, copy-and-go pack of anime art ideas across ten themes. Grab one, swap in your own OC, and generate it in <a href="https://eap.pixai.art/go/naveed" target="_blank" rel="noopener">PixAI</a>.</p>
+    <p class="eyebrow">Free anime prompt library & builder</p>
+    <h1>1,000+ Anime Prompt Ideas<br><span class="pop">for PixAI</span></h1>
+    <p class="lede">100 hand-written prompts you can copy right away, plus a mix-and-match builder that creates endless new ones. Grab a prompt, swap in your own OC, and generate it in <a href="https://eap.pixai.art/go/naveed" target="_blank" rel="noopener">PixAI</a>.</p>
     <div class="hero-meta">
-      <span class="tag">10 categories</span>
-      <span class="tag">100 prompts</span>
+      <span class="tag">100 curated prompts</span>
+      <span class="tag" id="combo-tag">builder: millions of combos</span>
       <span><span class="check">✓</span>marks prompts generated firsthand on Tsubaki.2</span>
     </div>
   </div>
 </header>
 
+<div class="tabbar" role="tablist" aria-label="Prompt sections">
+  <button class="tab" id="tab-btn-library" role="tab" aria-selected="true" aria-controls="tab-library" type="button">Prompt Library</button>
+  <button class="tab" id="tab-btn-builder" role="tab" aria-selected="false" aria-controls="tab-builder" type="button">Prompt Builder</button>
+</div>
+
+<section class="builder" id="tab-builder" role="tabpanel" hidden>
+  <div class="builder-panel">
+    <p class="builder-intro">Mix and match the pieces below to build your own prompt. Every dropdown swap makes a new one, so the combinations run into the millions. Roll the dice, tweak what you like, copy, and paste it into PixAI.</p>
+    <div class="builder-grid">
+      <div class="field"><label for="b-char">Character</label><select id="b-char"></select></div>
+      <div class="field"><label for="b-look">Outfit / Look</label><select id="b-look"></select></div>
+      <div class="field"><label for="b-action">Action</label><select id="b-action"></select></div>
+      <div class="field"><label for="b-setting">Setting</label><select id="b-setting"></select></div>
+      <div class="field"><label for="b-light">Lighting / Time</label><select id="b-light"></select></div>
+      <div class="field"><label for="b-mood">Mood</label><select id="b-mood"></select></div>
+      <div class="field"><label for="b-style">Style</label><select id="b-style"></select></div>
+    </div>
+    <div class="builder-actions">
+      <button class="btn primary" id="b-random" type="button">Roll a random prompt</button>
+      <button class="btn" id="b-copy" type="button">Copy prompt</button>
+    </div>
+    <p class="builder-out" id="b-out"></p>
+    <p class="builder-foot" id="b-foot"></p>
+  </div>
+</section>
+
+<div id="tab-library" role="tabpanel">
 <div class="controls">
   <div class="controls-inner">
     <div class="searchrow">
@@ -276,12 +374,14 @@
   <div class="grid" id="grid"></div>
   <div class="empty" id="empty" hidden>No prompts match that search. Try a different word, or clear the filter.</div>
 </main>
+</div>
 
 <footer>
   <h2>Ready to make these?</h2>
   <p>Pick a prompt, drop it into the generator, choose an anime model, and go. Your daily free credits are enough to test a whole batch.</p>
   <a class="cta" href="https://eap.pixai.art/go/naveed" target="_blank" rel="noopener">Open PixAI and start creating</a>
   <p class="footnote">These are prompt ideas to try, not guaranteed results. Made for use in <a href="https://eap.pixai.art/go/naveed" target="_blank" rel="noopener">PixAI</a>.</p>
+  <p class="footnote">Curated by <a href="https://www.linkedin.com/in/naveed-wali-khan/" target="_blank" rel="noopener">Naveed Wali Khan</a> · Read more on <a href="https://naveedwalikhan.substack.com/" target="_blank" rel="noopener">Substack</a></p>
 </footer>
 
 <script>
@@ -541,9 +641,11 @@ function render(){
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   list.forEach((p, i) => {
     const card = cardFor(p, i);
+    if(!reduce){
+      card.style.setProperty("--d", (Math.min(i, 14) * 0.025) + "s");
+      card.classList.add("reveal");
+    }
     grid.appendChild(card);
-    if(reduce){ card.classList.add("in"); }
-    else { requestAnimationFrame(() => setTimeout(() => card.classList.add("in"), Math.min(i, 12) * 22)); }
   });
 }
 
@@ -562,6 +664,159 @@ document.getElementById("random").addEventListener("click", () => {
 });
 
 render();
+
+/* ---------- Prompt Builder ---------- */
+const POOLS = {
+  char: [
+    "a cheerful girl with peach-pink hair in twin braids and warm brown eyes",
+    "a calm boy with messy dark-blue hair and gray eyes",
+    "a confident girl with a silver undercut and sharp violet eyes",
+    "a shy girl with long honey-blonde hair and round glasses",
+    "a rugged older man with a graying beard and a weathered face",
+    "an elegant woman with a black updo and deep red lips",
+    "a playful cat-eared girl with a striped tail and golden eyes",
+    "a stoic knight with cropped white hair and a thin scar",
+    "an energetic boy with curly copper hair and freckles",
+    "a mysterious girl with waist-length teal hair and pale skin",
+    "a gentle grandmother with soft wrinkles and kind eyes",
+    "a small chibi character with a giant head ribbon",
+    "an android girl with faint seam lines and glowing cyan eyes",
+    "a tired student with dark circles and a loose ponytail"
+  ],
+  look: [
+    "wearing a navy yukata with a red obi",
+    "wearing an oversized hoodie and shorts",
+    "wearing a school uniform with a loose tie",
+    "wearing ornate fantasy armor with gold trim",
+    "wearing a flowing white summer dress",
+    "wearing a cyberpunk jacket with glowing seams",
+    "wearing a cozy knit sweater and a scarf",
+    "wearing a tattered traveler's cloak",
+    "wearing a crisp cafe apron over a shirt",
+    "wearing a sleek pilot suit",
+    "wearing a frilly lolita dress with lace trim",
+    "wearing sporty beachwear and a sun visor"
+  ],
+  action: [
+    "holding a glowing lantern",
+    "reading a worn paperback",
+    "reaching up to catch falling petals",
+    "eating shaved ice with a tiny spoon",
+    "casting a spell with swirling light",
+    "leaning on a railing and looking away",
+    "running with a bag over one shoulder",
+    "playing an acoustic guitar",
+    "sipping tea with both hands on the cup",
+    "waving at the viewer with a big smile",
+    "sketching in a small notebook",
+    "releasing a paper airplane",
+    "kneeling to pet a stray cat",
+    "adjusting their glasses with one finger"
+  ],
+  setting: [
+    "on a festival street lined with paper lanterns",
+    "on a quiet beach at the water's edge",
+    "on a city rooftop above neon streets",
+    "in a sunlit library full of tall shelves",
+    "in a mossy forest clearing",
+    "on a train platform in light rain",
+    "in a cozy cluttered bedroom",
+    "in a grand ruined cathedral",
+    "on a hill of tall grass under a huge sky",
+    "in a neon cyberpunk alley",
+    "in a small flower shop",
+    "on a wooden pier over a calm lake",
+    "in a snowy village street",
+    "inside a warm cafe by the window"
+  ],
+  light: [
+    "golden hour sunlight",
+    "cool blue moonlight",
+    "warm lantern glow",
+    "soft overcast daylight",
+    "dramatic sunset backlight",
+    "gentle morning light",
+    "neon pink and cyan glow",
+    "flickering candlelight",
+    "bright clear midday sun",
+    "starlight with soft rim light"
+  ],
+  mood: [
+    "a peaceful nostalgic mood",
+    "a cheerful playful energy",
+    "a quiet melancholy",
+    "a dramatic tense atmosphere",
+    "a dreamy magical feeling",
+    "a warm cozy comfort",
+    "a lonely late-night calm",
+    "a bright hopeful mood"
+  ],
+  style: [
+    "detailed anime illustration",
+    "soft watercolor anime style",
+    "cel-shaded anime style",
+    "cinematic anime style with film grain",
+    "pastel storybook anime style",
+    "clean modern anime coloring"
+  ]
+};
+
+const B = {};
+["char","look","action","setting","light","mood","style"].forEach(k => {
+  const sel = document.getElementById("b-" + k);
+  POOLS[k].forEach((opt, i) => {
+    const o = document.createElement("option");
+    o.value = i; o.textContent = opt;
+    sel.appendChild(o);
+  });
+  sel.addEventListener("change", buildPrompt);
+  B[k] = sel;
+});
+
+const bOut = document.getElementById("b-out");
+function buildPrompt(){
+  const g = k => POOLS[k][B[k].value];
+  bOut.textContent = `${g("char")}, ${g("look")}, ${g("action")}, ${g("setting")}, ${g("light")}, ${g("mood")}, ${g("style")}`;
+}
+function rollAll(){
+  Object.keys(POOLS).forEach(k => {
+    B[k].value = Math.floor(Math.random() * POOLS[k].length);
+  });
+  buildPrompt();
+}
+document.getElementById("b-random").addEventListener("click", rollAll);
+document.getElementById("b-copy").addEventListener("click", function(){
+  const btn = this;
+  const done = () => {
+    btn.textContent = "Copied";
+    setTimeout(() => { btn.textContent = "Copy prompt"; }, 1400);
+  };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(bOut.textContent).then(done).catch(() => fallbackCopy(bOut.textContent, done));
+  } else {
+    fallbackCopy(bOut.textContent, done);
+  }
+});
+
+const comboTotal = Object.values(POOLS).reduce((n, p) => n * p.length, 1);
+document.getElementById("b-foot").textContent =
+  comboTotal.toLocaleString("en-US") + " possible combinations from these pools alone. Edit any piece after copying.";
+const comboTag = document.getElementById("combo-tag");
+if(comboTag) comboTag.textContent = "builder: " + (comboTotal/1e6).toFixed(1) + "M+ combos";
+rollAll();
+
+/* ---------- tabs ---------- */
+const tabBtns = { library: document.getElementById("tab-btn-library"), builder: document.getElementById("tab-btn-builder") };
+const tabPanels = { library: document.getElementById("tab-library"), builder: document.getElementById("tab-builder") };
+function showTab(which){
+  Object.keys(tabBtns).forEach(k => {
+    tabBtns[k].setAttribute("aria-selected", k === which ? "true" : "false");
+    tabPanels[k].hidden = k !== which;
+  });
+}
+tabBtns.library.addEventListener("click", () => showTab("library"));
+tabBtns.builder.addEventListener("click", () => showTab("builder"));
+showTab("library");
 </script>
 </body>
 </html>

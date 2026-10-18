@@ -4,7 +4,7 @@ A lightweight static web app that offers a curated library of anime-style prompt
 
 This project is a single-page HTML app featuring:
 
-- 100 hand-written anime prompt ideas
+- 125 hand-written anime prompt ideas, including 25 Halloween prompts (19 tested on Tsubaki.3 / Tsubaki.3 Flash)
 - searchable and filterable prompt library
 - category filters for different anime moods and settings
 - random prompt selection
@@ -13,6 +13,9 @@ This project is a single-page HTML app featuring:
 
 ## Live Demo
 
+https://naveedoss.github.io/anime-prompts/ (open the Halloween set directly with `#halloween`)
+
+
 Open `index.html` directly in a browser, or serve the project locally with a simple static file server.
 
 ## Project Structure
@@ -20,6 +23,7 @@ Open `index.html` directly in a browser, or serve the project locally with a sim
 ```text
 anime-prompts/
 ├── index.html
+├── sitemap.xml
 └── README.md
 ```
 
@@ -29,6 +33,7 @@ anime-prompts/
 
 The library contains a broad set of anime prompt options across categories such as:
 
+- Halloween
 - Portraits
 - Summer & Beach
 - Festival & Yukata
@@ -45,7 +50,7 @@ Each card includes:
 - category label
 - prompt text
 - copy button
-- optional "tested" badge for prompts that were generated firsthand
+- optional "tested" badge for prompts that were generated firsthand (hover shows the model)
 
 ### Prompt Builder
 

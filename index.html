@@ -3,8 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>1,000+ Anime Prompt Ideas for PixAI — Free Library & Builder</title>
-<meta name="description" content="A free anime prompt library and mix-and-match builder for PixAI. 100 hand-written prompts plus a builder that creates millions of new combinations. Beach, festival, fireworks, fantasy, sci-fi, chibi, and more.">
+<title>Anime Prompt Ideas for PixAI, Including Halloween Prompts | Free Library & Builder</title>
+<meta name="description" content="A free anime prompt library and builder for PixAI. 125 copy-ready prompts, including 25 Halloween anime prompts tested on Tsubaki.3, plus a builder with millions of combinations. Halloween, beach, festival, fantasy, sci-fi, chibi and more.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://naveedoss.github.io/anime-prompts/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Anime Prompt Ideas for PixAI, Including Halloween Prompts">
+<meta property="og:description" content="125 copy-ready anime prompts for PixAI, including 25 Halloween prompts tested on Tsubaki.3, plus a prompt builder.">
+<meta property="og:url" content="https://naveedoss.github.io/anime-prompts/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Anime Prompt Ideas for PixAI, Including Halloween Prompts">
+<meta name="twitter:description" content="125 copy-ready anime prompts for PixAI, including 25 Halloween prompts tested on Tsubaki.3.">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebPage",
+ "name": "Anime Prompt Ideas for PixAI",
+ "url": "https://naveedoss.github.io/anime-prompts/",
+ "description": "A free library of 125 anime prompts for PixAI, including 25 Halloween anime prompts, plus a prompt builder.",
+ "dateModified": "2026-10-18",
+ "author": {
+  "@type": "Person",
+  "name": "Naveed Wali Khan",
+  "url": "https://www.linkedin.com/in/naveed-wali-khan/"
+ },
+ "about": [
+  "anime prompts",
+  "Halloween AI prompts",
+  "PixAI"
+ ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -33,6 +62,7 @@
     --nature:#84cc16;
     --group:#fb7185;
     --chibi:#fb923c;
+    --halloween:#ea580c;
   }
 
   *{box-sizing:border-box}
@@ -311,6 +341,8 @@
     .hero-inner, .controls-inner, .countline, main{max-width:1200px}
   }
 
+  .seo-note{max-width:1140px;margin:8px auto 0;padding:0 20px 28px;color:var(--muted);font-size:.95rem}
+  .seo-note h2{font-family:var(--display);color:var(--ink);font-size:1.25rem;margin:0 0 8px}
 </style>
 </head>
 <body>
@@ -319,11 +351,12 @@
   <div class="hero-inner">
     <p class="eyebrow">Free anime prompt library & builder</p>
     <h1>1,000+ Anime Prompt Ideas<br><span class="pop">for PixAI</span></h1>
-    <p class="lede">100 hand-written prompts you can copy right away, plus a mix-and-match builder that creates endless new ones. Grab a prompt, swap in your own OC, and generate it in <a href="https://eap.pixai.art/go/naveed" target="_blank" rel="noopener">PixAI</a>.</p>
+    <p class="lede">125 hand-written prompts you can copy right away, including a new <a href="#halloween" id="halloween-link">Halloween set</a>, plus a mix-and-match builder that creates endless new ones. Grab a prompt, swap in your own OC, and generate it in <a href="https://eap.pixai.art/go/naveed" target="_blank" rel="noopener">PixAI</a>.</p>
     <div class="hero-meta">
-      <span class="tag">100 curated prompts</span>
+      <span class="tag">125 curated prompts</span>
+      <span class="tag">25 Halloween prompts</span>
       <span class="tag" id="combo-tag">builder: millions of combos</span>
-      <span><span class="check">✓</span>marks prompts generated firsthand on Tsubaki.2</span>
+      <span><span class="check">✓</span>marks prompts generated firsthand on PixAI (Tsubaki.2 or Tsubaki.3)</span>
     </div>
   </div>
 </header>
@@ -376,6 +409,11 @@
 </main>
 </div>
 
+<section class="seo-note" aria-labelledby="hw-title">
+  <h2 id="hw-title">Halloween anime prompts</h2>
+  <p>The Halloween set has 25 prompts for anime illustrations and profile pictures: a half-painted skeleton backstage, a corn maze scarecrow, pumpkin carving with a cat, a haunted house jump scare, a gravekeeper with will-o'-wisps, a neon Halloween street party, a ghost train ride, plus Halloween PFP ideas like a moon-halo werewolf, a bedsheet ghost, a pumpkin helmet, a potion-shop witch, a mummy streamer and a stitch-doll punk, and matching pair prompts. Prompts marked "tested" were generated firsthand in PixAI on Tsubaki.3 or Tsubaki.3 Flash in October 2026. Results depend on the model and settings you use.</p>
+</section>
+
 <footer>
   <h2>Ready to make these?</h2>
   <p>Pick a prompt, drop it into the generator, choose an anime model, and go. Your daily free credits are enough to test a whole batch.</p>
@@ -386,6 +424,7 @@
 
 <script>
 const CATEGORIES = [
+  {id:"halloween",name:"Halloween",         varname:"--halloween"},
   {id:"por",      name:"Portraits",           varname:"--por"},
   {id:"beach",    name:"Summer & Beach",      varname:"--beach"},
   {id:"festival", name:"Festival & Yukata",   varname:"--festival"},
@@ -399,6 +438,33 @@ const CATEGORIES = [
 ];
 
 const PROMPTS = [
+  // Halloween (tested on PixAI, October 2026)
+  {c:"halloween", v:true, m:"Tsubaki.3 Flash", t:"Anime illustration, close-up portrait of an adult man backstage at a Halloween show, halfway through painting glow-in-the-dark skeleton makeup on his face. The left half of his face is a finished white skull with black eye sockets, and the right half is still bare skin. He grins at his reflection while holding a thin brush, with a vanity mirror ringed by warm bulbs around him and a small jack-o'-lantern sticker on the mirror's corner. Warm bulb light on his bare side, a faint green glow on the painted side."},
+  {c:"halloween", v:true, m:"Tsubaki.3 Flash", t:"Anime illustration, medium-wide shot of an adult woman in a yellow raincoat in a corn maze on Halloween night, standing in the left half of the frame with her face clearly visible. She holds up a flashlight and freezes, wide-eyed, as a scarecrow with a carved pumpkin head turns toward her from the corn behind her. A wooden arrow sign with paper bats hanging from it points the way out. Cold blue moonlight, the flashlight as the only warm light, low mist along the ground."},
+  {c:"halloween", v:true, m:"Tsubaki.3 Flash", t:"Anime illustration, medium shot of an adult man carving a jack-o'-lantern at a cluttered kitchen table on Halloween night. His sleeves are rolled up and his hands are covered in orange pumpkin goop, and he laughs because a small black cat has climbed inside the hollow pumpkin and peeks out through the carved mouth. Bowls of pumpkin seeds, carving tools and a bag of candy cover the table. Warm yellow kitchen light, cozy and funny mood."},
+  {c:"halloween", v:true, m:"Tsubaki.3 Flash", t:"Anime illustration, top-down view looking straight down at an adult woman lying on a bedroom rug in a green dinosaur onesie costume, surrounded by her Halloween candy haul sorted into neat piles. Wrapped candies, lollipops and chocolate bars fan out around her in a circle, an orange pumpkin bucket lies tipped over by her hand, and she grins up at the viewer, holding one candy bar like a trophy. Soft lamp light, bright playful colors."},
+  {c:"halloween", v:true, m:"Tsubaki.3 Flash", t:"Anime illustration, low-angle shot inside a haunted house attraction. An adult actor in a long black coat and a plague doctor mask lunges out from behind a torn curtain toward the viewer, both gloved hands raised. A green emergency exit sign is the only light, casting harsh green light across the mask and the drifting smoke. Fake cobwebs and a hanging rubber skeleton fill the corner. Sudden, creepy mood with deep shadows."},
+  {c:"halloween", v:true, m:"Tsubaki.3 Flash", t:"Anime illustration, wide quiet scene of an old cemetery on Halloween night. An adult man, the gravekeeper, with a long grey scarf and a lantern hooked on his belt, sweeps fallen leaves off a stone path while a trail of small glowing blue will-o'-wisps follows behind him like curious pets. Crooked headstones with tiny carved pumpkins left on them, a bare twisted tree, and a pale full moon low on the horizon. Calm, gentle mood in soft blue and silver tones."},
+  {c:"halloween", v:true, m:"Tsubaki.3 Flash", t:"Anime illustration, wide shot of a rainy neon alley during a Halloween street party. An adult woman in a black hoodie wears a glowing LED jack-o'-lantern mask pushed up on her head and dances in the middle of the street, one arm raised, holding a glow stick. Puddles reflect orange and purple neon signs, paper skull garlands hang between the buildings, and a crowd in costumes blurs in the background. Electric, joyful mood."},
+  {c:"halloween", v:true, m:"Tsubaki.3", t:"Anime illustration, wide-angle shot from the front of a ghost train ride cart. Two adult friends sit side by side, one screaming with her hands on her cheeks and the other laughing with his arms up, as a paper skeleton drops from the ceiling right in front of them. Red and orange ride lights flash along the dark tunnel, cartoon ghost cutouts line the walls, and motion blur streaks the rails."},
+  {c:"halloween", v:true, m:"Tsubaki.3", t:"Anime avatar portrait of an adult man with a werewolf look, head and shoulders, centered and facing the viewer. Shaggy silver hair, fluffy grey wolf ears, amber eyes and a cheeky fanged grin. He wears a dark red hoodie with the hood down. A huge full moon glows right behind his head like a halo, against a deep navy night sky with nothing else in it. Clean cel shading, soft rim light from the moon."},
+  {c:"halloween", v:true, m:"Tsubaki.3 Flash", t:"Cute anime avatar portrait of an adult woman dressed as a bedsheet ghost for Halloween, head and shoulders, centered. A white sheet drapes over her head like a hood, with her face peeking out and a shy, happy smile. Pink cheeks, short lilac hair poking out, and she holds a small orange pumpkin candy bucket under her chin. Soft pastel lavender background with a few tiny floating stars. Soft shading, gentle colors."},
+  {c:"halloween", v:true, m:"Tsubaki.3 Flash", t:"Anime avatar portrait of a young adult man wearing a carved jack-o'-lantern pushed up on top of his head like a helmet, head and shoulders, centered, with the whole pumpkin visible and space above it. Warm candlelight shines out of the pumpkin's carved eyes and grin. Messy black hair, freckles and a wide laugh. He wears a green knitted scarf. Plain dark brown background with soft orange light. Warm painterly anime style."},
+  {c:"halloween", v:true, m:"Tsubaki.3", t:"Anime avatar portrait of an adult woman witch, head and shoulders, centered and zoomed out so her whole wide-brimmed pointed hat fits in the frame with space above the tip. The hat has dried flowers on the band and a tiny bat clinging to the brim. Long dark green hair, violet eyes and a sly smile. She holds a small glowing green potion bottle near her chin. Plain dusty purple background with soft green light."},
+  {c:"halloween", v:true, m:"Tsubaki.3 Flash", t:"Anime avatar portrait of an adult man dressed as a mummy for a Halloween stream, head and shoulders, centered. Loose white bandages wrap his head and neck, with one bandage end hanging over his eye and messy teal hair sticking out. He wears a black gaming headset and grins at the viewer. Purple and teal light from an unseen monitor glows on his face. Simple dark background. Sharp anime lineart, bold colors."},
+  {c:"halloween", v:true, m:"Tsubaki.3 Flash", t:"1990s retro anime style avatar portrait of an adult woman as a stitched patchwork doll, head and shoulders, centered. Pale skin with a few drawn-on stitch marks on her cheek, one blue eye and one yellow eye, and a bored half-smile as she blows a bubble of green gum. Short two-tone hair, half black and half white, held back with two silver bolt-shaped hair clips. Faded patchwork jacket. Flat lime green background. Cel shading with film grain."},
+  {c:"halloween", v:true, m:"Tsubaki.3 Flash", t:"solo, 1girl, pumpkin guardian, carved jack-o-lantern triangle-cut motif worked into a stitched burlap hood, wood-grain skin texture with faint moss patches, glowing ember-orange triangle eyes, patchwork burlap coat with visible hand-stitched seams, holding a small lit candle stub cupped in both hands, calm watchful expression, warm amber rim light, soft candle-flicker glow, dark autumn background with scattered dried leaves, cinematic lighting, Halloween atmosphere, half-body portrait framed for profile picture, centered composition, high quality"},
+  {c:"halloween", v:true, m:"Tsubaki.3 Flash", t:"solo, 1girl, ember spirit, translucent flame-gradient body dissolving into floating embers below the waist, a flame-shaped hair tuft echoing the same triangle cut as the guardian's eyes, glowing amber-orange eyes, thin wisps of smoke trailing from bare shoulders, no solid lower body, playful restless expression, warm amber rim light, soft candle-flicker glow, dark autumn background with scattered dried leaves, cinematic lighting, Halloween atmosphere, half-body portrait framed for profile picture, centered composition, high quality"},
+  {c:"halloween", v:true, m:"Tsubaki.3 Flash", t:"solo, 1girl, candy witch, striped candy-cane staff with a swirled lollipop finial, patchwork coat in lollipop-swirl fabric, round vintage glasses, messy bun with a candy-corn hair clip, mischievous grin, candy-corn tricolor palette — orange, yellow, cream, swirled lollipop-stripe pattern as a recurring fabric detail, warm cauldron-glow lighting from below with a soft green-orange bounce, dark Halloween night background, half-body portrait framed for profile picture, centered composition, high quality"},
+  {c:"halloween", v:true, m:"Tsubaki.3 Flash", t:"solo, 1girl, cat familiar in human form, slit cat-pupil eyes, clawed black gloves, a visible cat tail with a candy-corn striped tip, pointed cat ears, sleek black hair with orange-yellow streaks, swirled lollipop-pattern choker, sly confident expression, candy-corn tricolor palette — orange, yellow, cream, swirled lollipop-stripe pattern as a recurring fabric detail, warm cauldron-glow lighting from below with a soft green-orange bounce, dark Halloween night background, half-body portrait framed for profile picture, centered composition, high quality"},
+  {c:"halloween", v:true, m:"Tsubaki.3 Flash", t:"solo, 1girl, gothic portrait, warm candlelit palette, deep burgundy velvet dress with lace trim, dark hair with a single streak of silver, a small crescent-moon birthmark near the left eye, standing before an ornate antique mirror frame cropped at image edges, warm golden-amber lighting, soft vignette, calm composed expression, half-body portrait framed for profile picture, centered composition, high quality"},
+  {c:"halloween", t:"Anime illustration of an adult barista at a late-night café on Halloween, drawing a ghost face in latte foam, bat-shaped cookies lined up on the counter, rain streaking the window behind her, warm amber light, cozy mood."},
+  {c:"halloween", t:"Anime illustration of a young adult man dressed as a scarecrow for a costume party, straw poking out of his sleeves, laughing as crows land on his outstretched arms, a pumpkin patch at golden hour behind him, warm painterly style."},
+  {c:"halloween", t:"Anime illustration, close-up of an adult woman in a black lace veil with a tiny silver spider brooch, holding a candle that drips purple wax, dark velvet background, soft candlelight, quiet gothic mood."},
+  {c:"halloween", t:"Anime illustration of two adult friends on a rooftop on Halloween night, wrapped in one blanket, watching a huge orange moon while a bat-shaped kite flies above them, city lights below, calm and warm mood."},
+  {c:"halloween", t:"Chibi anime illustration of a tiny round bat mascot wearing a candy-corn scarf, sitting in a teacup full of wrapped candy, pastel orange background, cute sticker style."},
+  {c:"halloween", t:"Anime illustration of an adult man running a haunted bookshop on Halloween night, books floating off the shelves around him, a ghost cat curled on the counter, green lamp light, curious and magical mood."},
+
   // Portraits
   {c:"por", t:"A close-up portrait of a quiet girl with long charcoal hair and pale green eyes, a single white flower tucked behind her ear, soft window light, muted background, gentle expression, detailed anime illustration"},
   {c:"por", t:"1boy, short crimson hair, sharp golden eyes, a black high-collar coat, a faint scar over one eyebrow, confident half-smile, dramatic side lighting, dark background, anime style"},
@@ -552,6 +618,14 @@ function makeChip(id, name, varname){
 }
 chipsEl.appendChild(makeChip("all", "All"));
 CATEGORIES.forEach(c => chipsEl.appendChild(makeChip(c.id, c.name, c.varname)));
+// deep link: #halloween or ?cat=halloween opens that category
+(function(){
+  const want = (new URLSearchParams(location.search).get("cat") || location.hash.replace("#","")).toLowerCase();
+  if(want && catMap[want]){
+    activeCat = want;
+    [...chipsEl.children].forEach(c => c.setAttribute("aria-pressed", c.dataset.cat === want ? "true" : "false"));
+  }
+})();
 
 function cardFor(p, idx){
   const cat = catMap[p.c];
@@ -569,7 +643,7 @@ function cardFor(p, idx){
     const badge = document.createElement("span");
     badge.className = "tested";
     badge.textContent = "tested";
-    badge.title = "Generated firsthand on Tsubaki.2";
+    badge.title = "Generated firsthand on " + (p.m || "Tsubaki.2");
     top.appendChild(badge);
   }
   card.appendChild(top);
@@ -648,6 +722,16 @@ function render(){
     grid.appendChild(card);
   });
 }
+
+window.addEventListener("hashchange", () => {
+  const want = location.hash.replace("#","").toLowerCase();
+  if(catMap[want]){
+    activeCat = want;
+    [...chipsEl.children].forEach(c => c.setAttribute("aria-pressed", c.dataset.cat === want ? "true" : "false"));
+    render();
+    chipsEl.scrollIntoView({behavior:"smooth", block:"start"});
+  }
+});
 
 searchEl.addEventListener("input", e => {
   query = e.target.value.trim().toLowerCase();

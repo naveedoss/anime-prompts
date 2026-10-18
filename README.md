@@ -4,7 +4,7 @@ A lightweight static web app that offers a curated library of anime-style prompt
 
 This project is a single-page HTML app featuring:
 
-- 200 hand-written anime prompt ideas, including a large Halloween set (many tested on Tsubaki.3 / Tsubaki.3 Flash)
+- a hand-written anime prompt library, including a large Halloween set (many tested on Tsubaki.3 / Tsubaki.3 Flash)
 - searchable and filterable prompt library
 - category filters for different anime moods and settings
 - random prompt selection

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>15M+ Anime Prompts for PixAI, Including Halloween Prompts | Free Library & Builder</title>
+<title>15M+ Free Anime Prompts for PixAI, Including Halloween Prompts | Free Library & Builder</title>
 <meta name="description" content="A free anime prompt library and builder for PixAI with 15M+ anime prompts, including a big set of Halloween anime prompts tested on Tsubaki.3, plus a builder with millions of combinations. Halloween, beach, festival, fantasy, sci-fi, chibi and more.">
 <meta name="google-site-verification" content="-HWrTh54KmZKahOjfL0WCvuVPMNNBk8GtUhDtwcHuCY" />
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -80,9 +80,19 @@
 
   /* ---------- header ---------- */
   header.hero{
-    background:var(--card);
-    border-bottom:1px solid var(--line);
-    padding:clamp(36px, 6vw, 72px) clamp(20px, 5vw, 40px) clamp(28px, 4vw, 44px);
+    position:relative;
+    text-align:center;
+    padding:clamp(48px, 8vw, 96px) clamp(20px, 5vw, 40px) clamp(36px, 5vw, 56px);
+    background:linear-gradient(120deg, #fce7f3, #ede9fe, #ffedd5, #e0f2fe, #fce7f3);
+    background-size:300% 300%;
+    animation:heroShift 22s ease-in-out infinite alternate;
+  }
+  @keyframes heroShift{
+    0%{background-position:0% 50%}
+    100%{background-position:100% 50%}
+  }
+  @media (prefers-reduced-motion: reduce){
+    header.hero{animation:none}
   }
   .hero-inner{max-width:1140px;margin:0 auto;width:100%}
   h1{
@@ -95,7 +105,8 @@
     margin:0 0 14px;
   }
   .lede{
-    max-width:620px;
+    max-width:640px;
+    margin-left:auto !important;margin-right:auto !important;
     font-size:1.02rem;
     color:var(--muted);
     margin:0 0 20px;
@@ -103,7 +114,7 @@
   .lede a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line);text-decoration-thickness:2px;text-underline-offset:3px;font-weight:600}
   .lede a:hover{text-decoration-color:var(--violet)}
   .hero-meta{
-    display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;
+    display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;justify-content:center;
     font-family:var(--mono);font-size:.78rem;color:var(--muted);
   }
   .hero-meta span + span::before{content:"·";margin-right:18px;color:var(--line)}
@@ -123,7 +134,6 @@
     position:sticky;top:0;z-index:20;
     background:rgba(247,244,251,.92);
     backdrop-filter:saturate(1.2) blur(8px);
-    border-bottom:1px solid var(--line);
   }
   .controls-inner{max-width:1140px;margin:0 auto;padding:14px 24px}
   .searchrow{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
@@ -333,16 +343,14 @@
     .hero-inner, .controls-inner, .countline, main{max-width:1200px}
   }
 
-  .seo-note{max-width:1140px;margin:8px auto 0;padding:0 20px 28px;color:var(--muted);font-size:.95rem}
-  .seo-note h2{font-family:var(--display);color:var(--ink);font-size:1.25rem;margin:0 0 8px}
 </style>
 </head>
 <body>
 
 <header class="hero">
   <div class="hero-inner">
-    <h1>15M+ Anime Prompts for PixAI</h1>
-    <p class="lede">Hand-written anime prompts you can copy right away, from Halloween scenes to beach days, plus a mix-and-match builder that creates endless new ones. Try them on <a href="https://eap.pixai.art/go/naveed" target="_blank" rel="noopener">PixAI</a> with the new <a href="https://eap.pixai.art/go/naveed3" target="_blank" rel="noopener">Tsubaki.3</a> model or <a href="https://eap.pixai.art/go/naveed2" target="_blank" rel="noopener">Mio</a>, or build a whole scene in <a href="https://eap.pixai.art/go/naveed1" target="_blank" rel="noopener">PixAI Studio</a>.</p>
+    <h1>15M+ Free Anime Prompts for PixAI</h1>
+    <p class="lede">Copy any hand-written prompt, from Halloween scenes to beach days, or open the builder and mix seven parts (character, outfit, action, setting, lighting, mood and style) into more than 15 million combinations. Try them on <a href="https://eap.pixai.art/go/naveed" target="_blank" rel="noopener">PixAI</a> with the new <a href="https://eap.pixai.art/go/naveed3" target="_blank" rel="noopener">Tsubaki.3</a> model or <a href="https://eap.pixai.art/go/naveed2" target="_blank" rel="noopener">Mio</a>, or build a whole scene in <a href="https://eap.pixai.art/go/naveed1" target="_blank" rel="noopener">PixAI Studio</a>.</p>
     <div class="hero-meta">
       <span>copy-ready library</span>
       <span id="combo-tag">builder: millions of combos</span>
@@ -398,11 +406,6 @@
   <div class="empty" id="empty" hidden>No prompts match that search. Try a different word, or clear the filter.</div>
 </main>
 </div>
-
-<section class="seo-note" aria-labelledby="hw-title">
-  <h2 id="hw-title">Halloween anime prompts</h2>
-  <p>The Halloween set covers anime illustrations and profile pictures: a half-painted skeleton backstage, a corn maze scarecrow, pumpkin carving with a cat, a haunted house jump scare, a gravekeeper with will-o'-wisps, a neon Halloween street party, a ghost train ride, plus Halloween PFP ideas like a moon-halo werewolf, a bedsheet ghost, a pumpkin helmet, a potion-shop witch, a mummy streamer and a stitch-doll punk, matching pair prompts, chibi stickers, cozy scenes, spooky stories and Halloween backgrounds. Prompts marked "tested" were generated firsthand in PixAI on Tsubaki.3 or Tsubaki.3 Flash in October 2026. Results depend on the model and settings you use.</p>
-</section>
 
 <footer>
   <h2>Ready to make these?</h2>
